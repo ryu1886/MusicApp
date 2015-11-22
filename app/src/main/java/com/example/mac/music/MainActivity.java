@@ -20,16 +20,15 @@ import android.widget.Toast;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
-            // create MediaPlayer object
+
             mMplayer = new MediaPlayer();
 
-            // create Button object and added Event lisener.
+
             bt_start = (Button) findViewById(R.id.bt_start);
             bt_stop = (Button) findViewById(R.id.bt_stop);
 
 
 
-            // Prepare mp3 file for MediaPlayer
             try {
                 AssetFileDescriptor afd = getResources().openRawResourceFd(R.raw.boysandgirls);
                 mMplayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
@@ -37,7 +36,7 @@ import android.widget.Toast;
                 Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
-            // Music Start
+
             bt_start.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -49,7 +48,7 @@ import android.widget.Toast;
                     }
                 }
             });
-            // Music Stop
+
             bt_stop.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
